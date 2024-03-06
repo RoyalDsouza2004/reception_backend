@@ -6,12 +6,13 @@ config({
 });
 
 const connection = mysql.createPool({
-      host: "127.0.0.1",
-      user: "root",
+      host: process.env.DATABASE_HOST,
+      port: process.env.PORT,
+      user: process.env.DATABASE_USER,
       password: process.env.PASSWORD,
-      database: "reception_management"
+      database: process.env.DATABASE_NAME,
 }).promise();
 
-setTimeout(()=> console.log("database connected successfully") , 1);
+setTimeout(()=> console.log("database connected in ") , 1);
 
 export {connection};

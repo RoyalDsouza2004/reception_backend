@@ -32,7 +32,7 @@ CREATE TABLE Appointment (
   Staff_Member_ID INT NOT NULL,
   Purpose VARCHAR(20),
   Booking_Status ENUM('Pending', 'Approved', 'Cancelled') DEFAULT 'Pending',
-  Approval_DateTime DATETIME DEFAULT=NULL,
+  Approval_DateTime DATETIME DEFAULT NULL,
   CONSTRAINT unique_appointment UNIQUE (Visitor_ID, Staff_Member_ID, Date_Time),
   FOREIGN KEY(Staff_Member_ID) REFERENCES Staff(ID) ON DELETE CASCADE,
   FOREIGN KEY(Visitor_ID) REFERENCES Visitor(ID) ON DELETE CASCADE

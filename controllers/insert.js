@@ -46,7 +46,7 @@ export const appointment = async (req , res , next) => {
 
       try {
 
-            await connection.query("INSERT INTO appointment(Visitor_ID , Staff_Member_ID , Date_Time) values(?,?,?);", [visitorId, staffId, dateTime]), (err, result) => {
+            await connection.query("INSERT INTO Appointment(Visitor_ID , Staff_Member_ID , Date_Time) values(?,?,?);", [visitorId, staffId, dateTime]), (err, result) => {
                   if (err) return next(new ErrorHandler("visitor or staff does not exists", 400));
             }
             res.status(200).json({

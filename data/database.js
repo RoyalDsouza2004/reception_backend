@@ -13,6 +13,6 @@ const connection = mysql.createPool({
       database: process.env.DATABASE_NAME,
 }).promise();
 
-setTimeout(()=> console.log("database connected in ") , 1);
+setTimeout(()=> console.log(d`atabase connected in ` ) , 1);
 
 export {connection};

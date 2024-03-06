@@ -86,7 +86,7 @@ export const visitorCounts = async (req, res, next) => {
             all_months.Month;
         ` , [currentDate])
 
-        const visitorCount = rows.map(row => row.visitorData);
+        const visitorCount = visitorData.map(row => row.visitorData);
 
             res.status(200).json({
                   success: true,

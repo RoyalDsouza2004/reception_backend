@@ -10,7 +10,7 @@ export const isAuthenticated = async(req , res , next)=>{
       
 	const decoded = jwt.verify(token , process.env.JWT_SECRET);
 
-      [req.user] = await connection.query("SELECT * FROM Admin WHERE id = ?" , [decoded.id]) ;
+      [req.user[0]] = await connection.query("SELECT * FROM Admin WHERE id = ?" , [decoded.id]) ;
 
 	next();
 }

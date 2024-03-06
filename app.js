@@ -18,8 +18,8 @@ app.use(cookieParser());
 
 app.use('/api/v1/admin' , adminRouter);
 app.use('/api/v1/insert', insertRouter);
-app.use('/api/v2/view', viewRouter);
-app.use('/api/v2/data', dataRouter);
+app.use('/api/v1/view', viewRouter);
+app.use('/api/v1/data', dataRouter);
 
 
 app.get('/', (req, res) => {

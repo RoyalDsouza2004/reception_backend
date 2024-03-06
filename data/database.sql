@@ -180,3 +180,27 @@ FROM
     ) AS subquery;
 
 
+SELECT 
+    COALESCE(Visitor_Count, 0) AS Visitor_Count
+FROM 
+    (
+        SELECT 1 AS Month UNION
+        SELECT 2 AS Month UNION
+        SELECT 3 AS Month UNION
+        SELECT 4 AS Month UNION
+        SELECT 5 AS Month UNION
+        SELECT 6 AS Month UNION
+        SELECT 7 AS Month
+    ) AS all_months
+LEFT JOIN 
+    (
+        SELECT MONTH(Date_Time_of_Visit) AS Month, COUNT(*) AS Visitor_Count
+        FROM Visitor
+        WHERE MONTH(Date_Time_of_Visit) BETWEEN 1 AND 7  -- Filter for months 1 to 7
+        GROUP BY Month
+    ) AS visitor_counts
+ON 
+    all_months.Month = visitor_counts.Month
+ORDER BY 
+    all_months.Month;
+

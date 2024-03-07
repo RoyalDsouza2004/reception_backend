@@ -4,7 +4,7 @@ import { updateApproval , totalCounts , visitorCounts } from '../controllers/dat
 
 const router = express.Router();
 
-router.patch("/approval/:id" ,isAuthenticated, updateApproval);
+router.patch("/approval/:id" , updateApproval);
 
 router.get("/count" , totalCounts);
 

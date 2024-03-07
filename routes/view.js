@@ -4,10 +4,12 @@ import { isAuthenticated } from '../middlewares/auth.js';
 
 const router = express.Router();
 
-router.get("/visitorDetails" ,isAuthenticated,visitorDetails);
+// router.get("/visitorDetails" ,isAuthenticated,visitorDetails);
+router.get("/visitorDetails" ,visitorDetails);
 
-router.get("/staffDetails" ,isAuthenticated, staffDetails);
+// router.get("/staffDetails" ,isAuthenticated, staffDetails);
+router.get("/staffDetails" , staffDetails);
 
-router.get("/appointmentDetails",isAuthenticated,appointmentDetails);
+router.get("/appointmentDetails",appointmentDetails);
 
 export default router;

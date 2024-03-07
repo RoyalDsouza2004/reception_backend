@@ -5,11 +5,11 @@ import { isAuthenticated } from '../middlewares/auth.js';
 const router = express.Router();
 
 
-router.post('/add-visitor' ,isAuthenticated ,addVisitor);
+router.post('/add-visitor' ,addVisitor);
 
-router.post('/add-new-staff' ,isAuthenticated, addNewStaff);
+router.post('/add-new-staff' ,addNewStaff);
 
-router.post("/new-appointment",isAuthenticated, appointment);
+router.post("/new-appointment", appointment);
 
 
 export default router;

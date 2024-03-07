@@ -4,7 +4,13 @@ export const updateApproval = async (req, res, next) => {
       const dateNow = new Date();
       try {
             const { approval } = req.body;
-            const statusApproval = approval === true ? 'Approved' : 'Cancelled';
+            console.log(approval)
+            let statusApproval ; 
+            if(approval===true){
+                  statusApproval = 'Approved';
+            }else{
+                  statusApproval = 'Cancelled';
+            }
 
             const { id } = req.params;
 

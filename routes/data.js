@@ -4,10 +4,10 @@ import { updateApproval , totalCounts , visitorCounts } from '../controllers/dat
 
 const router = express.Router();
 
-router.patch("/approval/:id" , isAuthenticated , updateApproval);
+router.patch("/approval/:id" ,isAuthenticated, updateApproval);
 
-router.get("/count" , isAuthenticated , totalCounts);
+router.get("/count" , totalCounts);
 
-router.get("/visitor-count" , isAuthenticated , visitorCounts);
+router.get("/visitor-count" ,  visitorCounts);
 
 export default router;

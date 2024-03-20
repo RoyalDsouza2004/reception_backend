@@ -10,6 +10,6 @@ router.get("/count" , totalCounts);
 
 router.get("/visitor-count" ,  visitorCounts);
 
-router.delete("/delete-staff" , deleteStaff);
+router.delete("/delete-staff/:id" , deleteStaff);
 
 export default router;

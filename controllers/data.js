@@ -4,7 +4,6 @@ export const updateApproval = async (req, res, next) => {
       const dateNow = new Date();
       try {
             const { approval } = req.body;
-            console.log(approval)
             let statusApproval ; 
             if(approval===true){
                   statusApproval = 'Approved';
@@ -101,4 +100,20 @@ export const visitorCounts = async (req, res, next) => {
       } catch (error) {
             next(error);
       }
+}
+
+
+export const deleteStaff = async(req , res , next) => {
+      const {id} = req.params;
+
+       try {
+            await connection.query(`DELETE FROM Staff WHERE ID =? ;`, [id]);
+
+            return res.status(200).json({
+                  success: true,
+                  message : "Staff Deleted Successfully",
+            })
+       }catch(err){
+            next(err);
+       }
 }
